@@ -1,3 +1,14 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+
+@layer utilities {
+    .verdana {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .sans-serif {
+        font-family: Tahoma, sans-serif;
+    }
+}
