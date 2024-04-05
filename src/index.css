@@ -11,4 +11,9 @@
     .sans-serif {
         font-family: Tahoma, sans-serif;
     }
+    .backgroundImage {
+        background-image: url('assets/images/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }

@@ -4,7 +4,9 @@ function App() {
 
   return (
     <>
-      <Navbar/>
+      <div className='backgroundImage w-full h-[100vh]'>
+        <Navbar/>
+      </div>
     </>
   )
 }
