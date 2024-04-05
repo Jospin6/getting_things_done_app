@@ -1,4 +1,5 @@
 import { Navbar } from './components/Navbar'
+import { Projects } from './components/Projects'
 
 function App() {
 
@@ -6,6 +7,7 @@ function App() {
     <>
       <div className='backgroundImage w-full h-[100vh]'>
         <Navbar/>
+        <Projects/>
       </div>
     </>
   )
