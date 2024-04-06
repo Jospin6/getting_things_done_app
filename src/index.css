@@ -16,4 +16,7 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+    .semi-bold {
+        font-weight: 500;
+    }
 }
