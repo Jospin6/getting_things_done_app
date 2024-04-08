@@ -19,4 +19,7 @@
     .semi-bold {
         font-weight: 500;
     }
+    .balck-opacity{
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
