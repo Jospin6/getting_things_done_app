@@ -1,10 +1,14 @@
 import { Navbar } from './components/Navbar'
+import { Projects } from './components/Projects'
 
 function App() {
 
   return (
     <>
-      <Navbar/>
+      <div className='backgroundImage w-full h-[100vh] relative'>
+        <Navbar/>
+        <Projects/>
+      </div>
     </>
   )
 }

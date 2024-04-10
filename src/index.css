@@ -11,4 +11,15 @@
     .sans-serif {
         font-family: Tahoma, sans-serif;
     }
+    .backgroundImage {
+        background-image: url('assets/images/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .semi-bold {
+        font-weight: 500;
+    }
+    .balck-opacity{
+        background-color: rgba(0, 0, 0, 0.8);
+    }
 }
