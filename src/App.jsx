@@ -9,7 +9,6 @@ function App() {
       <div className='backgroundImage w-full h-[100vh] relative'>
         <Navbar/>
         <Projects/>
-        <CreateProjectPopup/>
       </div>
     </>
   )
