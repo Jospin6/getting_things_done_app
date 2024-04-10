@@ -1,6 +1,5 @@
 import { Navbar } from './components/Navbar'
 import { Projects } from './components/Projects'
-import { CreateProjectPopup } from './components/CreateProjectPopup'
 
 function App() {
 
