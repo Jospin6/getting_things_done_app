@@ -2,26 +2,26 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     projects: [],
+    isVisible: false,
 }
-
-let nextProjectId = 1;
-let nextTodoId = 1;
 
 export const todosSlice = createSlice({
     name: 'todos',
     initialState,
     reducers: {
+        setVisible: (state) => {
+          state.isVisible = !state.isVisible
+        },
         addProject: (state, action) => {
-            state.projects.push({
-              id: nextProjectId++,
-              title: action.payload,
-              todos: [],
-            });
+            state.projects.push(action.payload);
             localStorage.setItem('projects', JSON.stringify(state.projects));
-          },
+        },
     }
 })
 
-export const { addProject } = todosSlice.actions;
+export const { addProject, setVisible } = todosSlice.actions;
+
+export const projects = state => state.todos.projects
+export const isVisible = state => state.todos.isVisible
 
 export default todosSlice.reducer;

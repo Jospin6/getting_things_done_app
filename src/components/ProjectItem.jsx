@@ -9,8 +9,7 @@ export const ProjectItem = () => {
             <span className="semi-bold text-[20px]">My Project name</span>
             <button className="absolute top-0 right-[15px] px-[5px] text-black semi-bold">X</button>
         </div>
-        <TaskItem/>
-        <TaskItem/>
+        {/* <TaskItem/> */}
         <button className='absolute bottom-0 left-0 h-[40px] bg-green-500 w-full rounded-b-lg text-white semi-bold'>Add task</button>
     </div>
 }
