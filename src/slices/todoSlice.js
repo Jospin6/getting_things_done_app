@@ -16,10 +16,13 @@ export const todosSlice = createSlice({
             state.projects.push(action.payload);
             localStorage.setItem('projects', JSON.stringify(state.projects));
         },
+        getAllProjects: (state, action) => {
+            state.projects = action.payload
+        }
     }
 })
 
-export const { addProject, setVisible } = todosSlice.actions;
+export const { addProject, setVisible, getAllProjects } = todosSlice.actions;
 
 export const projects = state => state.todos.projects
 export const isVisible = state => state.todos.isVisible
