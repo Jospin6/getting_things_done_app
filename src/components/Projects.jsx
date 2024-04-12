@@ -1,11 +1,11 @@
 import { ProjectItem } from './ProjectItem'
-import { getAllProjects } from '../slices/todoSlice'
+import { getAllProjects, getProjects } from '../slices/todoSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 
 export const Projects = () => {
     const dispatch = useDispatch()
-    const projects = useSelector((state) => state.todos.projects)
+    const projects = useSelector(getProjects)
 
     useEffect(() => {
         const projectsFromLocalStorage = JSON.parse(localStorage.getItem('projects'));

@@ -24,7 +24,7 @@ export const todosSlice = createSlice({
 
 export const { addProject, setVisible, getAllProjects } = todosSlice.actions;
 
-export const projects = state => state.todos.projects
+export const getProjects = state => state.todos.projects
 export const isVisible = state => state.todos.isVisible
 
 export default todosSlice.reducer;

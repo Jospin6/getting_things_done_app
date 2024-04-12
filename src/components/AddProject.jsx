@@ -1,9 +1,9 @@
 import { useSelector, useDispatch} from 'react-redux'
-import {addProject, projects, setVisible} from '../slices/todoSlice'
+import {addProject, getProjects, setVisible} from '../slices/todoSlice'
 import { useState } from 'react'
 
 export const AddProject = () => {
-    const theProjects = useSelector(projects)
+    const projects = useSelector(getProjects)
     const dispatch = useDispatch()
 
     const [newProjectName, setNewProjectName] = useState('')
@@ -13,7 +13,7 @@ export const AddProject = () => {
     const addNewProject = () => {
         if (newProjectName != '') {
             dispatch(addProject({
-                id: theProjects.length + 1,
+                id: projects.length + 1,
                 title: newProjectName,
                 todos: []
             }))
