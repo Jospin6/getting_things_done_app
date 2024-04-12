@@ -2,8 +2,7 @@ import { useSelector, useDispatch} from 'react-redux'
 import {addProject, projects, setVisible} from '../slices/todoSlice'
 import { useState } from 'react'
 
-export const AddProject = (props) => {
-    const {} = props
+export const AddProject = () => {
     const theProjects = useSelector(projects)
     const dispatch = useDispatch()
 
