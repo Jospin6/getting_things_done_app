@@ -5,6 +5,7 @@ export const CreateTask = () => {
     const [description, setDescription] = useState('')
 
     const handleTitleChange = (e) => setTitle(e.target.value)
+    const handleDescriptionChange = (e) => setDescription(e.target.value)
 
     return <div className="balck-opacity w-full h-[100vh] fixed right-0 top-0">
         <div className="w-[300px] h-[350px] mt-[150px] bg-white rounded-lg m-auto">
@@ -24,7 +25,7 @@ export const CreateTask = () => {
             </div>
             <div className="w-full py-2 px-4">
                 <input type="text" className="w-full h-[35px] border-[1px] border-gray-400 rounded-lg 
-                pl-2 outline-none" placeholder="Description" />
+                pl-2 outline-none" onChange={handleDescriptionChange} value={description} placeholder="Description" />
             </div>
             <div className="w-full py-2 px-4">
                 <input type="date" className="w-full h-[35px] border-[1px] border-gray-400 rounded-lg 
