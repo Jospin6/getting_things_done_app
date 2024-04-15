@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import {isVisible, setVisible} from '../slices/todoSlice'
 import { CreateProjectPopup } from './CreateProjectPopup'
+import { CreateTask } from './CreateTask'
 
 export const Navbar = () => {
     const visible = useSelector(isVisible)
@@ -20,5 +21,6 @@ export const Navbar = () => {
             New Project
         </button>
         <CreateProjectPopup isVisible={visible}/>
+        <CreateTask/>
     </div>
 }

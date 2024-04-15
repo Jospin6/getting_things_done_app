@@ -1,13 +1,19 @@
 import { useState } from "react"
+import { isTaskVisible } from '../slices/todoSlice'
+import { useDispatch, useSelector} from 'react-redux'
 
 export const CreateTask = () => {
+    const istaskVisible = useSelector(isTaskVisible)
+
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
 
     const handleTitleChange = (e) => setTitle(e.target.value)
     const handleDescriptionChange = (e) => setDescription(e.target.value)
 
-    return <div className="balck-opacity w-full h-[100vh] fixed right-0 top-0">
+    let style = "balck-opacity w-full z-10 h-[100vh] text-black fixed right-0 top-0"
+
+    return <div className={istaskVisible ? style : style.concat(" hidden")}>
         <div className="w-[300px] h-[350px] mt-[150px] bg-white rounded-lg m-auto">
             <div className="rounded-t-lg border-b-[1px] border-gray-200 pb-2">
                 <div className="w-full h-[40px] rounded-t-lg text-center leading-[40px] semi-bold 
