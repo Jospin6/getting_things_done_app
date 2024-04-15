@@ -1,14 +1,11 @@
 import { useDispatch, useSelector} from 'react-redux'
-import { setTaskVisible, setClickedProjectId } from '../slices/todoSlice'
+import { setTaskVisible } from '../slices/todoSlice'
+import { CreateTask } from './CreateTask'
 
 export const ProjectItem = (props) => {
     const {project} = props
     const dispatch = useDispatch()
 
-    const handleTaskVisibility = () => {
-        dispatch(setClickedProjectId(project.id))
-        dispatch(setTaskVisible())
-    }
 
     return <div className="md:col-span-2 col-span-1 min-h-[300px] mt-2 h-auto 
     bg-white rounded-lg relative pb-[40px]">
@@ -18,8 +15,9 @@ export const ProjectItem = (props) => {
             <button className="absolute top-0 right-[15px] px-[5px] text-black semi-bold">X</button>
         </div>
         <button className='absolute bottom-0 left-0 h-[40px] bg-green-500
-         w-full rounded-b-lg text-white semi-bold' onClick={handleTaskVisibility}>
+         w-full rounded-b-lg text-white semi-bold' onClick={() => dispatch(setTaskVisible())}>
             Add task
         </button>
+        <CreateTask id={project.id}/>
     </div>
 }
