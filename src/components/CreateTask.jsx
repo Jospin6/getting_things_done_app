@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { isTaskVisible } from '../slices/todoSlice'
+import { isTaskVisible, setTaskVisible } from '../slices/todoSlice'
 import { useDispatch, useSelector} from 'react-redux'
 
 export const CreateTask = () => {
     const istaskVisible = useSelector(isTaskVisible)
+    const dispatch = useDispatch()
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -19,7 +20,10 @@ export const CreateTask = () => {
                 <div className="w-full h-[40px] rounded-t-lg text-center leading-[40px] semi-bold 
                 text-[20px] relative">
                     <span>New Task</span>
-                    <button className="absolute right-[15px] px-2 text-[16px] top-0">X</button>
+                    <button className="absolute right-[15px] px-2 text-[16px] top-0" 
+                    onClick={() => dispatch(setTaskVisible())}>
+                        X
+                    </button>
                 </div>
                 <div className="text-[14px] text-gray-400 text-center">
                     Write a new task

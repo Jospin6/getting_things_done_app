@@ -16,7 +16,10 @@ export const todosSlice = createSlice({
         },
         setTaskVisible: (state) => {
             state.isTaskVisible = !state.isTaskVisible
-          },
+        },
+        setClickedProjectId: (state, action) => {
+            state.currentId = action.payload
+        },
         addProject: (state, action) => {
             state.projects.push(action.payload);
             localStorage.setItem('projects', JSON.stringify(state.projects));
@@ -30,7 +33,13 @@ export const todosSlice = createSlice({
     }
 })
 
-export const { addProject, setVisible, getAllProjects, setTaskVisible } = todosSlice.actions;
+export const { 
+    addProject, 
+    setVisible, 
+    getAllProjects, 
+    setTaskVisible, 
+    setClickedProjectId 
+} = todosSlice.actions;
 
 export const getProjects = state => state.todos.projects
 export const isVisible = state => state.todos.isVisible
