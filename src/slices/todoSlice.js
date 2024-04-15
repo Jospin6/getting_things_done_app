@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
     projects: [],
     isVisible: false,
+    currentId: 0
 }
 
 export const todosSlice = createSlice({
@@ -18,6 +19,9 @@ export const todosSlice = createSlice({
         },
         getAllProjects: (state, action) => {
             state.projects = action.payload
+        },
+        addTask: (state, action) => {
+            
         }
     }
 })
