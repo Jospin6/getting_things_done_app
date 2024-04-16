@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    projects: JSON.parse(localStorage.getItem('projects')) || [],
+    projects: JSON.parse(localStorage.getItem('projects')) || [] ,
     isVisible: false,
     isTaskVisible: false,
 }
@@ -21,12 +21,12 @@ export const todosSlice = createSlice({
             localStorage.setItem('projects', JSON.stringify(state.projects));
         },
         addTask: (state, action) => {
-            state.projects = state.projects.forEach(project => {
-                if (project.id === state.currentId) {
-                    project.todos.unshift(action.payload)
-                }
-            });
-            localStorage.setItem('projects', JSON.stringify(state.projects));
+            const {projectId, todo} = action.payload
+            const project = state.projects.find(project => project.id === projectId);
+            if (project) {
+                project.todos.push(todo);
+                localStorage.setItem('projects', JSON.stringify(state.projects));
+            }
         }
     }
 })
