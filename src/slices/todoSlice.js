@@ -24,7 +24,8 @@ export const todosSlice = createSlice({
             const {projectId, todo} = action.payload
             const project = state.projects.find(project => project.id === projectId);
             if (project) {
-                project.todos.push(todo);
+                let todoId = project.todos.length + 1
+                project.todos.push({id: todoId, ...todo});
                 localStorage.setItem('projects', JSON.stringify(state.projects));
             }
         }
