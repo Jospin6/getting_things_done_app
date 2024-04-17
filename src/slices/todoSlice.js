@@ -28,6 +28,9 @@ export const todosSlice = createSlice({
                 project.todos.push({id: todoId, ...todo});
                 localStorage.setItem('projects', JSON.stringify(state.projects));
             }
+        },
+        deleteProject: (state, action) => {
+
         }
     }
 })
