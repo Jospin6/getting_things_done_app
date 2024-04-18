@@ -3,6 +3,23 @@
 #### This application allows users to effectively manage and plan their tasks.
 <hr />
 
+> The home page is a list of projects created by the user.
+
+![screenshot](./home.png)
+
+<hr />
+
+> On this popup we have a form to create a new project.
+
+![screenshot](./create_project.png)
+
+<hr />
+
+> And on this last popup we have a form to create tasks for a specific project.
+
+![screenshot](./create_task.png)
+
+<hr />
 
 ## Built With
 
