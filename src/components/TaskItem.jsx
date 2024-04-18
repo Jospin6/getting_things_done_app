@@ -1,13 +1,17 @@
 import { useDispatch } from 'react-redux'
-import {deleteTask} from '../slices/todoSlice'
+import { deleteTask, completedTask } from '../slices/todoSlice'
 
 export const TaskItem = (props) => {
     const { projectId, todo } = props
     const dispatch = useDispatch()
 
     const deleteATask = () => dispatch(deleteTask({projectId: projectId, taskId: todo.id}))
+    const completeTask = () => dispatch(completedTask({projectId: projectId, taskId: todo.id}))
 
-    return <div className="w-full h-[auto] border-l-[2px] border-b-[1px] border-gray-400 p-2">
+    let mainStle = "w-full h-[auto] border-l-[2px] border-b-[1px] p-2"
+    let completeBtn = "px-[10px] py-[2px] text-[13px] rounded-lg"
+
+    return <div className={!todo.done ? mainStle.concat(" border-gray-400") : mainStle.concat(" border-green-400")}>
         <div className="border-b-[1px] border-gray-400 h-[40px] text-[17px] semi-bold">
             { todo.title }
         </div>
@@ -20,8 +24,11 @@ export const TaskItem = (props) => {
             rounded-lg mr-2 text-[13px]" onClick={deleteATask}>
                 Delete
             </button>
-            <button className="px-[10px] py-[2px] text-[13px] bg-gray-300 rounded-lg text-gray-600">
-                Complete
+            <button className={!todo.done 
+                ? completeBtn.concat(" bg-gray-300 text-gray-600") 
+                : completeBtn.concat(" bg-green-500 text-white")} 
+                onClick={completeTask}>
+                {!todo.done ? "Complete" : "Completed"}
             </button>
         </div>
     </div>
