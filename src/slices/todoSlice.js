@@ -32,6 +32,16 @@ export const todosSlice = createSlice({
         deleteProject: (state, action) => {
             state.projects = state.projects.filter(project => project.id !== action.payload);
             localStorage.setItem('projects', JSON.stringify(state.projects));
+        },
+        deleteTask: (state, action) => {
+            const { projectId, taskId } = action.payload
+            const getProject = state.projects.find(project => project.id == projectId)
+            if (getProject) {
+                getProject.todos = getProject.todos.filter(todo => todo.id !== taskId)
+            }
+            state.projects = state.projects.filter(project => project.id !== projectId);
+            state.projects.push(getProject)
+            localStorage.setItem('projects', JSON.stringify(state.projects));
         }
     }
 })
@@ -42,6 +52,7 @@ export const {
     setVisible, 
     setTaskVisible,
     deleteProject,
+    deleteTask,
 } = todosSlice.actions;
 
 export const getProjects = state => state.todos.projects

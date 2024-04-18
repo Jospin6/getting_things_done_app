@@ -21,7 +21,7 @@ export const ProjectItem = (props) => {
         </div>
         <div className='w-full h-auto'>
             {
-                project.todos.map(todo => <TaskItem todo={todo} key={todo.id}/>)
+                project.todos.map(todo => <TaskItem todo={todo} projectId={project.id} key={todo.id}/>)
             }
         </div>
         <button className='absolute bottom-0 left-0 h-[40px] bg-green-500
