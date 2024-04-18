@@ -13,13 +13,16 @@ export const todosSlice = createSlice({
         setVisible: (state) => {
           state.isVisible = !state.isVisible
         },
+
         setTaskVisible: (state) => {
             state.isTaskVisible = !state.isTaskVisible
         },
+
         addProject: (state, action) => {
             state.projects.push(action.payload);
             localStorage.setItem('projects', JSON.stringify(state.projects));
         },
+
         addTask: (state, action) => {
             const {projectId, todo} = action.payload
             const project = state.projects.find(project => project.id === projectId);
@@ -29,10 +32,12 @@ export const todosSlice = createSlice({
                 localStorage.setItem('projects', JSON.stringify(state.projects));
             }
         },
+
         deleteProject: (state, action) => {
             state.projects = state.projects.filter(project => project.id !== action.payload);
             localStorage.setItem('projects', JSON.stringify(state.projects));
         },
+
         deleteTask: (state, action) => {
             const { projectId, taskId } = action.payload
             const getProject = state.projects.find(project => project.id == projectId)
@@ -43,6 +48,7 @@ export const todosSlice = createSlice({
             state.projects.push(getProject)
             localStorage.setItem('projects', JSON.stringify(state.projects));
         }
+        
     }
 })
 
