@@ -32,9 +32,15 @@ export const CreateTask = () => {
                     done: doneChecked
             }}))
             dispatch(setTaskVisible())
+            reset()
         } else {
             console.log("something going wrong !")
         }
+    }
+
+    const reset = () => {
+        setTitle("")
+        setDescription("")
     }
 
     let style = "balck-opacity w-full z-10 h-[100vh] text-black fixed right-0 top-0"
