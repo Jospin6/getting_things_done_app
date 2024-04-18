@@ -1,11 +1,11 @@
 import { useState } from "react"
-import { isTaskVisible, setTaskVisible, addTask} from '../slices/todoSlice'
+import { isTaskVisible, setTaskVisible, addTask, getTheSelectedProjectId } from '../slices/todoSlice'
 import { useDispatch, useSelector} from 'react-redux'
 
-export const CreateTask = ({id}) => {
+export const CreateTask = () => {
     const istaskVisible = useSelector(isTaskVisible)
+    const projectId = useSelector(getTheSelectedProjectId)
     const dispatch = useDispatch()
-    const projectId = id
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')

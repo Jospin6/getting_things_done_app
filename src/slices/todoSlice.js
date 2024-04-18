@@ -4,6 +4,7 @@ const initialState = {
     projects: JSON.parse(localStorage.getItem('projects')) || [] ,
     isVisible: false,
     isTaskVisible: false,
+    selectedProjectId: null
 }
 
 export const todosSlice = createSlice({
@@ -61,6 +62,10 @@ export const todosSlice = createSlice({
             state.projects = state.projects.filter(project => project.id !== projectId);
             state.projects.push(getProject)
             localStorage.setItem('projects', JSON.stringify(state.projects));
+        },
+
+        setTheSelectedProjectId: (state, action) => {
+            state.selectedProjectId = action.payload
         }
     }
 })
@@ -73,10 +78,12 @@ export const {
     deleteProject,
     deleteTask,
     completedTask,
+    setTheSelectedProjectId,
 } = todosSlice.actions;
 
 export const getProjects = state => state.todos.projects
 export const isVisible = state => state.todos.isVisible
 export const isTaskVisible = state => state.todos.isTaskVisible
+export const getTheSelectedProjectId = state => state.todos.selectedProjectId
 
 export default todosSlice.reducer;
