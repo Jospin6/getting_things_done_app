@@ -31,7 +31,7 @@
 
 ## Live Demo 
 
-[Live Demo Link](https://getting-things-done-app.netlify.app/) -->
+[Live Demo Link](https://getting-things-done-app.netlify.app/)
 
 ## Getting Started
 
